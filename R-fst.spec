@@ -4,19 +4,18 @@
 #
 Name     : R-fst
 Version  : 0.9.0
-Release  : 1
+Release  : 2
 URL      : https://cran.r-project.org/src/contrib/fst_0.9.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fst_0.9.0.tar.gz
 Summary  : Lightning Fast Serialization of Data Frames for R
 Group    : Development/Tools
-License  : AGPL-3.0
+License  : AGPL-3.0 BSD-3-Clause GPL-2.0
 Requires: R-fst-lib = %{version}-%{release}
-Requires: R-Rcpp
-Requires: R-data.table
-Requires: R-lintr
+Requires: R-rex
 BuildRequires : R-Rcpp
 BuildRequires : R-data.table
 BuildRequires : R-lintr
+BuildRequires : R-rex
 BuildRequires : buildreq-R
 BuildRequires : buildreq-cmake
 
@@ -41,10 +40,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1556487213
+export SOURCE_DATE_EPOCH=1556491813
 
 %install
-export SOURCE_DATE_EPOCH=1556487213
+export SOURCE_DATE_EPOCH=1556491813
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
