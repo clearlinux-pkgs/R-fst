@@ -4,7 +4,7 @@
 #
 Name     : R-fst
 Version  : 0.9.0
-Release  : 2
+Release  : 3
 URL      : https://cran.r-project.org/src/contrib/fst_0.9.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fst_0.9.0.tar.gz
 Summary  : Lightning Fast Serialization of Data Frames for R
