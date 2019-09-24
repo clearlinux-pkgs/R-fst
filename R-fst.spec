@@ -4,18 +4,19 @@
 #
 Name     : R-fst
 Version  : 0.9.0
-Release  : 4
+Release  : 5
 URL      : https://cran.r-project.org/src/contrib/fst_0.9.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fst_0.9.0.tar.gz
 Summary  : Lightning Fast Serialization of Data Frames for R
 Group    : Development/Tools
 License  : AGPL-3.0 BSD-3-Clause GPL-2.0
 Requires: R-fst-lib = %{version}-%{release}
-Requires: R-rex
+Requires: R-Rcpp
+Requires: R-data.table
+Requires: R-lintr
 BuildRequires : R-Rcpp
 BuildRequires : R-data.table
 BuildRequires : R-lintr
-BuildRequires : R-rex
 BuildRequires : buildreq-R
 BuildRequires : buildreq-cmake
 
@@ -39,13 +40,13 @@ lib components for the R-fst package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1556491813
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569358084
 
 %install
-export SOURCE_DATE_EPOCH=1556491813
+export SOURCE_DATE_EPOCH=1569358084
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -74,7 +75,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
